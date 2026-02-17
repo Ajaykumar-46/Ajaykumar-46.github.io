@@ -34,37 +34,43 @@
         /* Smooth Custom Cursor */
         .cursor {
             position: fixed;
-            width: 20px;
-            height: 20px;
-            border: 2px solid var(--primary);
+            width: 12px;
+            height: 12px;
+            background: var(--primary);
             border-radius: 50%;
             pointer-events: none;
             z-index: 9999;
             mix-blend-mode: difference;
-            transition: all 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transform: translate(-50%, -50%);
+            transition: transform 0.15s ease, background 0.15s ease, width 0.15s ease, height 0.15s ease;
+            will-change: left, top;
         }
 
         .cursor-follower {
             position: fixed;
-            width: 40px;
-            height: 40px;
-            border: 1px solid var(--primary);
+            width: 36px;
+            height: 36px;
+            border: 2px solid rgba(0, 217, 255, 0.6);
             border-radius: 50%;
             pointer-events: none;
             z-index: 9998;
-            opacity: 0.5;
-            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            opacity: 0.7;
+            transform: translate(-50%, -50%);
+            transition: transform 0.2s ease, opacity 0.2s ease, width 0.2s ease, height 0.2s ease, border-color 0.2s ease;
+            will-change: left, top;
         }
 
         .cursor.active {
-            transform: scale(1.8);
-            background-color: rgba(0, 217, 255, 0.3);
-            border-color: var(--secondary);
+            width: 20px;
+            height: 20px;
+            background: var(--secondary);
         }
 
         .cursor-follower.active {
-            transform: scale(1.5);
-            opacity: 0.8;
+            width: 52px;
+            height: 52px;
+            opacity: 0.9;
+            border-color: var(--secondary);
         }
 
         /* Electronics Background Canvas */
@@ -75,6 +81,7 @@
             width: 100%;
             height: 100%;
             z-index: 0;
+            pointer-events: none;
             background: linear-gradient(180deg, #08090A 0%, #0D1117 50%, #08090A 100%);
         }
 
@@ -166,6 +173,7 @@
             background-size: 40px 40px;
             z-index: 2;
             opacity: 0.2;
+            pointer-events: none;
             animation: gridPulse 4s ease-in-out infinite;
         }
 
@@ -877,8 +885,8 @@
         /* Scroll Animations */
         .fade-up {
             opacity: 0;
-            transform: translateY(40px);
-            transition: all 0.8s ease;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
         }
 
         .fade-up.visible {
@@ -4923,7 +4931,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" alt="Ajay Kumar Pujari">
                                 <span class="tech-badge">MQTT</span>
                                 <span class="tech-badge">Cloud</span>
                             </div>
-                            <button class="view-project-btn">View Details</button>
+                            <div style="display:flex;gap:0.8rem;margin-top:0.5rem;">
+                                <button class="view-project-btn" style="flex:1" onclick="event.stopPropagation();openModal('energy')">View Details</button>
+                                <a href="https://github.com/Ajaykumar-46/Smart_Energy_monitoring_system" target="_blank" onclick="event.stopPropagation()" style="flex:1;display:flex;align-items:center;justify-content:center;gap:0.4rem;padding:1rem;background:transparent;border:2px solid #6e40c9;color:#c9a0ff;font-weight:700;border-radius:10px;text-decoration:none;font-family:'JetBrains Mono',monospace;font-size:0.9rem;transition:all 0.3s;" onmouseover="this.style.background='#6e40c9';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#c9a0ff'">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                    GitHub
+                                </a>
+                            </div>
                         </div>
                     </div>
 
@@ -4940,7 +4954,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" alt="Ajay Kumar Pujari">
                                 <span class="tech-badge">IoT</span>
                                 <span class="tech-badge">Servos</span>
                             </div>
-                            <button class="view-project-btn">View Details</button>
+                            <div style="display:flex;gap:0.8rem;margin-top:0.5rem;">
+                                <button class="view-project-btn" style="flex:1" onclick="event.stopPropagation();openModal('robotic')">View Details</button>
+                                <a href="https://github.com/Ajaykumar-46/Embedded_Robotic_Arm_Control_System" target="_blank" onclick="event.stopPropagation()" style="flex:1;display:flex;align-items:center;justify-content:center;gap:0.4rem;padding:1rem;background:transparent;border:2px solid #6e40c9;color:#c9a0ff;font-weight:700;border-radius:10px;text-decoration:none;font-family:'JetBrains Mono',monospace;font-size:0.9rem;transition:all 0.3s;" onmouseover="this.style.background='#6e40c9';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#c9a0ff'">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                    GitHub
+                                </a>
+                            </div>
                         </div>
                     </div>
 
@@ -4957,7 +4977,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" alt="Ajay Kumar Pujari">
                                 <span class="tech-badge">MQTT</span>
                                 <span class="tech-badge">IoT</span>
                             </div>
-                            <button class="view-project-btn">View Details</button>
+                            <div style="display:flex;gap:0.8rem;margin-top:0.5rem;">
+                                <button class="view-project-btn" style="flex:1" onclick="event.stopPropagation();openModal('irrigation')">View Details</button>
+                                <a href="https://github.com/Ajaykumar-46/Smart_Drip_Irrigation_System" target="_blank" onclick="event.stopPropagation()" style="flex:1;display:flex;align-items:center;justify-content:center;gap:0.4rem;padding:1rem;background:transparent;border:2px solid #6e40c9;color:#c9a0ff;font-weight:700;border-radius:10px;text-decoration:none;font-family:'JetBrains Mono',monospace;font-size:0.9rem;transition:all 0.3s;" onmouseover="this.style.background='#6e40c9';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#c9a0ff'">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                    GitHub
+                                </a>
+                            </div>
                         </div>
                     </div>
 
@@ -4974,7 +5000,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" alt="Ajay Kumar Pujari">
                                 <span class="tech-badge">Servo</span>
                                 <span class="tech-badge">LCD</span>
                             </div>
-                            <button class="view-project-btn">View Details</button>
+                            <div style="display:flex;gap:0.8rem;margin-top:0.5rem;">
+                                <button class="view-project-btn" style="flex:1" onclick="event.stopPropagation();openModal('railway')">View Details</button>
+                                <a href="https://github.com/Ajaykumar-46/Automatic_Railway_Gate_System" target="_blank" onclick="event.stopPropagation()" style="flex:1;display:flex;align-items:center;justify-content:center;gap:0.4rem;padding:1rem;background:transparent;border:2px solid #6e40c9;color:#c9a0ff;font-weight:700;border-radius:10px;text-decoration:none;font-family:'JetBrains Mono',monospace;font-size:0.9rem;transition:all 0.3s;" onmouseover="this.style.background='#6e40c9';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#c9a0ff'">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                    GitHub
+                                </a>
+                            </div>
                         </div>
                     </div>
 
@@ -4991,7 +5023,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" alt="Ajay Kumar Pujari">
                                 <span class="tech-badge">LDR</span>
                                 <span class="tech-badge">Alarm</span>
                             </div>
-                            <button class="view-project-btn">View Details</button>
+                            <div style="display:flex;gap:0.8rem;margin-top:0.5rem;">
+                                <button class="view-project-btn" style="flex:1" onclick="event.stopPropagation();openModal('laser')">View Details</button>
+                                <a href="https://github.com/Ajaykumar-46/Laser_Security_System" target="_blank" onclick="event.stopPropagation()" style="flex:1;display:flex;align-items:center;justify-content:center;gap:0.4rem;padding:1rem;background:transparent;border:2px solid #6e40c9;color:#c9a0ff;font-weight:700;border-radius:10px;text-decoration:none;font-family:'JetBrains Mono',monospace;font-size:0.9rem;transition:all 0.3s;" onmouseover="this.style.background='#6e40c9';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#c9a0ff'">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                    GitHub
+                                </a>
+                            </div>
                         </div>
                     </div>
 
@@ -5008,7 +5046,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" alt="Ajay Kumar Pujari">
                                 <span class="tech-badge">Analog</span>
                                 <span class="tech-badge">PCB</span>
                             </div>
-                            <button class="view-project-btn">View Details</button>
+                            <div style="display:flex;gap:0.8rem;margin-top:0.5rem;">
+                                <button class="view-project-btn" style="flex:1" onclick="event.stopPropagation();openModal('touch')">View Details</button>
+                                <a href="https://github.com/Ajaykumar-46/Touch_Sensor_Security_System_Using_IC-555_Timer" target="_blank" onclick="event.stopPropagation()" style="flex:1;display:flex;align-items:center;justify-content:center;gap:0.4rem;padding:1rem;background:transparent;border:2px solid #6e40c9;color:#c9a0ff;font-weight:700;border-radius:10px;text-decoration:none;font-family:'JetBrains Mono',monospace;font-size:0.9rem;transition:all 0.3s;" onmouseover="this.style.background='#6e40c9';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#c9a0ff'">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                    GitHub
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -5023,32 +5067,36 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" alt="Ajay Kumar Pujari">
                     <p class="subtitle">Professional training and achievements</p>
                 </div>
                 <div class="certificates-grid">
-                    <div class="certificate-card fade-up">
+                    <div class="certificate-card fade-up" onclick="openCertModal('cert1')" style="cursor:pointer;">
                         <div class="cert-icon">🎓</div>
                         <h3>Web Development Internship</h3>
                         <div class="cert-org">DDU GKY Institute</div>
                         <div class="cert-year">2025</div>
+                        <div style="margin-top:1rem;color:var(--primary);font-size:0.85rem;font-family:'JetBrains Mono',monospace;opacity:0.8;">Click to View Certificate →</div>
                     </div>
 
-                    <div class="certificate-card fade-up">
+                    <div class="certificate-card fade-up" onclick="openCertModal('cert2')" style="cursor:pointer;">
                         <div class="cert-icon">🏆</div>
                         <h3>AMR HACKMANIA – Hackathon Participant</h3>
                         <div class="cert-org">Certified Participant</div>
                         <div class="cert-year">2025, 2026</div>
+                        <div style="margin-top:1rem;color:var(--primary);font-size:0.85rem;font-family:'JetBrains Mono',monospace;opacity:0.8;">Click to View Certificate →</div>
                     </div>
 
-                    <div class="certificate-card fade-up">
+                    <div class="certificate-card fade-up" onclick="openCertModal('cert3')" style="cursor:pointer;">
                         <div class="cert-icon">⚡</div>
                         <h3>Embedded Systems</h3>
                         <div class="cert-org">Simplilearn SkillUp</div>
                         <div class="cert-year">2025</div>
+                        <div style="margin-top:1rem;color:var(--primary);font-size:0.85rem;font-family:'JetBrains Mono',monospace;opacity:0.8;">Click to View Certificate →</div>
                     </div>
 
-                    <div class="certificate-card fade-up">
+                    <div class="certificate-card fade-up" onclick="openCertModal('cert4')" style="cursor:pointer;">
                         <div class="cert-icon">🔌</div>
                         <h3>PCB Design</h3>
                         <div class="cert-org">Simplilearn SkillUp</div>
                         <div class="cert-year">2025</div>
+                        <div style="margin-top:1rem;color:var(--primary);font-size:0.85rem;font-family:'JetBrains Mono',monospace;opacity:0.8;">Click to View Certificate →</div>
                     </div>
                 </div>
             </div>
@@ -5118,7 +5166,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" alt="Ajay Kumar Pujari">
                     </div>
 
                     <div class="contact-box fade-up">
-        
+                    
                     <div class="contact-icon">💼</div>
                     <a href="https://github.com/ajaykumar-46" target="_blank">GitHub Profile</a>
                 </div>
@@ -5333,7 +5381,92 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" alt="Ajay Kumar Pujari">
         </div>
     </div>
 
-    <script>
+    <!-- Certificate Modals -->
+    <div id="cert1-modal" class="modal">
+        <div class="modal-content" style="text-align:center;max-width:650px;">
+            <span class="close-modal" onclick="closeCertModal('cert1')">&times;</span>
+            <div style="font-size:5rem;margin-bottom:1rem;">🎓</div>
+            <h2 style="color:var(--primary);margin-bottom:0.5rem;">Certificate of Completion</h2>
+            <div style="width:80%;height:2px;background:linear-gradient(90deg,var(--primary),var(--secondary));margin:1rem auto;"></div>
+            <h3 style="font-size:1.8rem;color:var(--text);margin-bottom:1rem;">Web Development Internship</h3>
+            <p style="color:var(--text-dim);margin-bottom:0.5rem;font-size:1.1rem;">This certifies that</p>
+            <p style="color:var(--accent);font-size:1.5rem;font-weight:700;margin-bottom:0.5rem;font-family:'JetBrains Mono',monospace;">Ajay Kumar</p>
+            <p style="color:var(--text-dim);margin-bottom:1.5rem;">has successfully completed the internship program in</p>
+            <div style="background:rgba(0,217,255,0.08);border:1px solid rgba(0,217,255,0.3);border-radius:12px;padding:1.5rem;margin-bottom:1.5rem;">
+                <p style="color:var(--primary);font-size:1.2rem;font-weight:700;">Web Development</p>
+            </div>
+            <div style="display:flex;justify-content:center;gap:3rem;">
+                <div><p style="color:var(--secondary);font-weight:600;">Organization</p><p style="color:var(--text);">DDU GKY Institute</p></div>
+                <div><p style="color:var(--secondary);font-weight:600;">Year</p><p style="color:var(--text);">2025</p></div>
+            </div>
+            <div style="margin-top:1.5rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,0.1);font-size:0.8rem;color:var(--text-dim);font-family:'JetBrains Mono',monospace;">📌 Replace this modal with your actual certificate image by adding an &lt;img&gt; tag</div>
+        </div>
+    </div>
+
+    <div id="cert2-modal" class="modal">
+        <div class="modal-content" style="text-align:center;max-width:650px;">
+            <span class="close-modal" onclick="closeCertModal('cert2')">&times;</span>
+            <div style="font-size:5rem;margin-bottom:1rem;">🏆</div>
+            <h2 style="color:var(--accent);margin-bottom:0.5rem;">Certificate of Participation</h2>
+            <div style="width:80%;height:2px;background:linear-gradient(90deg,var(--accent),var(--secondary));margin:1rem auto;"></div>
+            <h3 style="font-size:1.8rem;color:var(--text);margin-bottom:1rem;">AMR HACKMANIA – Hackathon</h3>
+            <p style="color:var(--text-dim);margin-bottom:0.5rem;font-size:1.1rem;">This certifies that</p>
+            <p style="color:var(--accent);font-size:1.5rem;font-weight:700;margin-bottom:0.5rem;font-family:'JetBrains Mono',monospace;">Ajay Kumar</p>
+            <p style="color:var(--text-dim);margin-bottom:1.5rem;">successfully participated as a competitor in</p>
+            <div style="background:rgba(255,201,60,0.08);border:1px solid rgba(255,201,60,0.3);border-radius:12px;padding:1.5rem;margin-bottom:1.5rem;">
+                <p style="color:var(--accent);font-size:1.2rem;font-weight:700;">AMR HACKMANIA Hackathon</p>
+            </div>
+            <div style="display:flex;justify-content:center;gap:3rem;">
+                <div><p style="color:var(--secondary);font-weight:600;">Status</p><p style="color:var(--text);">Certified Participant</p></div>
+                <div><p style="color:var(--secondary);font-weight:600;">Year</p><p style="color:var(--text);">2025 & 2026</p></div>
+            </div>
+            <div style="margin-top:1.5rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,0.1);font-size:0.8rem;color:var(--text-dim);font-family:'JetBrains Mono',monospace;">📌 Replace this modal with your actual certificate image by adding an &lt;img&gt; tag</div>
+        </div>
+    </div>
+
+    <div id="cert3-modal" class="modal">
+        <div class="modal-content" style="text-align:center;max-width:650px;">
+            <span class="close-modal" onclick="closeCertModal('cert3')">&times;</span>
+            <div style="font-size:5rem;margin-bottom:1rem;">⚡</div>
+            <h2 style="color:var(--primary);margin-bottom:0.5rem;">Certificate of Completion</h2>
+            <div style="width:80%;height:2px;background:linear-gradient(90deg,var(--primary),var(--secondary));margin:1rem auto;"></div>
+            <h3 style="font-size:1.8rem;color:var(--text);margin-bottom:1rem;">Embedded Systems</h3>
+            <p style="color:var(--text-dim);margin-bottom:0.5rem;font-size:1.1rem;">This certifies that</p>
+            <p style="color:var(--accent);font-size:1.5rem;font-weight:700;margin-bottom:0.5rem;font-family:'JetBrains Mono',monospace;">Ajay Kumar</p>
+            <p style="color:var(--text-dim);margin-bottom:1.5rem;">has successfully completed the course in</p>
+            <div style="background:rgba(0,217,255,0.08);border:1px solid rgba(0,217,255,0.3);border-radius:12px;padding:1.5rem;margin-bottom:1.5rem;">
+                <p style="color:var(--primary);font-size:1.2rem;font-weight:700;">Embedded Systems Programming</p>
+            </div>
+            <div style="display:flex;justify-content:center;gap:3rem;">
+                <div><p style="color:var(--secondary);font-weight:600;">Platform</p><p style="color:var(--text);">Simplilearn SkillUp</p></div>
+                <div><p style="color:var(--secondary);font-weight:600;">Year</p><p style="color:var(--text);">2025</p></div>
+            </div>
+            <div style="margin-top:1.5rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,0.1);font-size:0.8rem;color:var(--text-dim);font-family:'JetBrains Mono',monospace;">📌 Replace this modal with your actual certificate image by adding an &lt;img&gt; tag</div>
+        </div>
+    </div>
+
+    <div id="cert4-modal" class="modal">
+        <div class="modal-content" style="text-align:center;max-width:650px;">
+            <span class="close-modal" onclick="closeCertModal('cert4')">&times;</span>
+            <div style="font-size:5rem;margin-bottom:1rem;">🔌</div>
+            <h2 style="color:var(--primary);margin-bottom:0.5rem;">Certificate of Completion</h2>
+            <div style="width:80%;height:2px;background:linear-gradient(90deg,var(--primary),var(--secondary));margin:1rem auto;"></div>
+            <h3 style="font-size:1.8rem;color:var(--text);margin-bottom:1rem;">PCB Design</h3>
+            <p style="color:var(--text-dim);margin-bottom:0.5rem;font-size:1.1rem;">This certifies that</p>
+            <p style="color:var(--accent);font-size:1.5rem;font-weight:700;margin-bottom:0.5rem;font-family:'JetBrains Mono',monospace;">Ajay Kumar</p>
+            <p style="color:var(--text-dim);margin-bottom:1.5rem;">has successfully completed the course in</p>
+            <div style="background:rgba(0,217,255,0.08);border:1px solid rgba(0,217,255,0.3);border-radius:12px;padding:1.5rem;margin-bottom:1.5rem;">
+                <p style="color:var(--primary);font-size:1.2rem;font-weight:700;">PCB Design & Layout</p>
+            </div>
+            <div style="display:flex;justify-content:center;gap:3rem;">
+                <div><p style="color:var(--secondary);font-weight:600;">Platform</p><p style="color:var(--text);">Simplilearn SkillUp</p></div>
+                <div><p style="color:var(--secondary);font-weight:600;">Year</p><p style="color:var(--text);">2025</p></div>
+            </div>
+            <div style="margin-top:1.5rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,0.1);font-size:0.8rem;color:var(--text-dim);font-family:'JetBrains Mono',monospace;">📌 Replace this modal with your actual certificate image by adding an &lt;img&gt; tag</div>
+        </div>
+    </div>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Smooth Custom Cursor with Interpolation
         let mouseX = 0, mouseY = 0;
         let cursorX = 0, cursorY = 0;
@@ -5348,20 +5481,20 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" alt="Ajay Kumar Pujari">
             mouseY = e.clientY;
         });
 
-        // Smooth cursor animation with interpolation
+        // Ultra-smooth cursor animation with interpolation
         function animateCursor() {
-            // Lerp (linear interpolation) for smooth following
-            cursorX += (mouseX - cursorX) * 0.25;
-            cursorY += (mouseY - cursorY) * 0.25;
+            // Faster lerp for cursor, slower for follower = natural trailing effect
+            cursorX += (mouseX - cursorX) * 0.5;
+            cursorY += (mouseY - cursorY) * 0.5;
             
-            followerX += (mouseX - followerX) * 0.12;
-            followerY += (mouseY - followerY) * 0.12;
+            followerX += (mouseX - followerX) * 0.15;
+            followerY += (mouseY - followerY) * 0.15;
             
-            cursor.style.left = cursorX + 'px';
-            cursor.style.top = cursorY + 'px';
+            cursor.style.left = Math.round(cursorX) + 'px';
+            cursor.style.top = Math.round(cursorY) + 'px';
             
-            follower.style.left = followerX + 'px';
-            follower.style.top = followerY + 'px';
+            follower.style.left = Math.round(followerX) + 'px';
+            follower.style.top = Math.round(followerY) + 'px';
             
             requestAnimationFrame(animateCursor);
         }
@@ -5441,6 +5574,17 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" alt="Ajay Kumar Pujari">
             document.body.style.overflow = 'auto';
         }
 
+        // Certificate Modal Functions
+        function openCertModal(id) {
+            document.getElementById(id + '-modal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeCertModal(id) {
+            document.getElementById(id + '-modal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
         window.onclick = function(event) {
             if (event.target.classList.contains('modal')) {
                 event.target.classList.remove('active');
@@ -5455,26 +5599,42 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" alt="Ajay Kumar Pujari">
             }
         });
 
-        // Scroll Animations
-        function reveal() {
-            const elements = document.querySelectorAll('.fade-up');
-            elements.forEach(el => {
-                const windowHeight = window.innerHeight;
-                const elementTop = el.getBoundingClientRect().top;
-                if (elementTop < windowHeight - 100) {
+        // Robust Scroll Animations with IntersectionObserver + fallback
+        const fadeElements = document.querySelectorAll('.fade-up');
+
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.05, rootMargin: '0px 0px -50px 0px' });
+
+            fadeElements.forEach(el => observer.observe(el));
+        } else {
+            // Fallback: make everything visible immediately
+            fadeElements.forEach(el => el.classList.add('visible'));
+        }
+
+        // Also run on scroll as extra fallback
+        function revealFallback() {
+            fadeElements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 50) {
                     el.classList.add('visible');
                 }
             });
         }
-
-        window.addEventListener('scroll', reveal);
-        reveal();
+        window.addEventListener('scroll', revealFallback, { passive: true });
+        revealFallback();
 
         // Smooth Scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', (e) => {
                 e.preventDefault();
-                const target = document.querySelector(anchor.getAttribute('href'));
+                              const target = document.querySelector(anchor.getAttribute('href'));
                 if (target) {
                     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
