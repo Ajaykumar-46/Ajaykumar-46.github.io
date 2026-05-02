@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ajay Kumar - Electronics Engineer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -94,8 +97,17 @@
         }
 
         @keyframes circuitPulse {
-            0%, 100% { opacity: 0.1; box-shadow: 0 0 5px var(--primary); }
-            50% { opacity: 0.3; box-shadow: 0 0 15px var(--primary); }
+
+            0%,
+            100% {
+                opacity: 0.1;
+                box-shadow: 0 0 5px var(--primary);
+            }
+
+            50% {
+                opacity: 0.3;
+                box-shadow: 0 0 15px var(--primary);
+            }
         }
 
         /* Electronic Components */
@@ -109,18 +121,23 @@
         }
 
         @keyframes componentFloat {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translateY(0) rotate(0deg);
                 opacity: 0.15;
             }
+
             25% {
                 transform: translateY(-50px) rotate(90deg);
                 opacity: 0.25;
             }
+
             50% {
                 transform: translateY(-20px) rotate(180deg);
                 opacity: 0.1;
             }
+
             75% {
                 transform: translateY(-80px) rotate(270deg);
                 opacity: 0.2;
@@ -158,8 +175,13 @@
         }
 
         @keyframes wave {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
         }
 
         /* Glowing Dots Grid */
@@ -178,8 +200,15 @@
         }
 
         @keyframes gridPulse {
-            0%, 100% { opacity: 0.2; }
-            50% { opacity: 0.4; }
+
+            0%,
+            100% {
+                opacity: 0.2;
+            }
+
+            50% {
+                opacity: 0.4;
+            }
         }
 
         .content {
@@ -384,8 +413,13 @@
         }
 
         @keyframes shimmer {
-            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+            0% {
+                transform: translateX(-100%) translateY(-100%) rotate(45deg);
+            }
+
+            100% {
+                transform: translateX(100%) translateY(100%) rotate(45deg);
+            }
         }
 
         .photo-container img {
@@ -873,7 +907,8 @@
                 padding: 2rem;
             }
 
-            .cursor, .cursor-follower {
+            .cursor,
+            .cursor-follower {
                 display: none;
             }
 
@@ -911,8 +946,370 @@
         ::-webkit-scrollbar-thumb:hover {
             background: var(--secondary);
         }
+
+        /* Education */
+        .education-card {
+            background: var(--dark-light);
+            border-radius: 20px;
+            padding: 3rem;
+            border: 1px solid rgba(0, 217, 255, 0.15);
+            display: flex;
+            gap: 2.5rem;
+            align-items: flex-start;
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .education-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--primary), var(--secondary));
+            border-radius: 5px 0 0 5px;
+        }
+
+        .education-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 50px rgba(0, 217, 255, 0.25);
+        }
+
+        .edu-icon-wrap {
+            width: 80px;
+            height: 80px;
+            min-width: 80px;
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.15), rgba(255, 46, 99, 0.1));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            border: 1px solid rgba(0, 217, 255, 0.2);
+        }
+
+        .edu-info h3 {
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin-bottom: 0.4rem;
+        }
+
+        .edu-info .edu-degree {
+            font-size: 1.1rem;
+            color: var(--text);
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+        }
+
+        .edu-info .edu-college {
+            font-size: 1rem;
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+        }
+
+        .edu-info .edu-meta {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 0.8rem;
+            flex-wrap: wrap;
+        }
+
+        .edu-badge {
+            padding: 0.4rem 1.2rem;
+            background: rgba(0, 217, 255, 0.1);
+            border: 1px solid rgba(0, 217, 255, 0.3);
+            border-radius: 30px;
+            font-size: 0.9rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .edu-badge.cgpa {
+            background: rgba(255, 193, 60, 0.1);
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* Commitments & Learning */
+        .learning-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .learning-card {
+            background: var(--dark-light);
+            border-radius: 20px;
+            padding: 2.5rem;
+            border: 1px solid rgba(0, 217, 255, 0.1);
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .learning-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transform: scaleX(0);
+            transition: transform 0.4s;
+            transform-origin: left;
+        }
+
+        .learning-card:hover::after {
+            transform: scaleX(1);
+        }
+
+        .learning-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: 0 15px 40px rgba(0, 217, 255, 0.2);
+        }
+
+        .learning-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .learning-card h3 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+        }
+
+        .learning-card p {
+            color: var(--text-dim);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        .learning-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .learning-stat {
+            background: var(--dark-light);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid rgba(0, 217, 255, 0.1);
+            transition: all 0.4s;
+        }
+
+        .learning-stat:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .learning-stat .stat-num {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--primary);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .learning-stat .stat-label {
+            color: var(--text-dim);
+            font-size: 0.95rem;
+            margin-top: 0.4rem;
+        }
+
+        /* Achievements */
+        .achieve-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .achieve-stat-box {
+            background: var(--dark-light);
+            border-radius: 18px;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid rgba(0, 217, 255, 0.1);
+            transition: all 0.4s;
+        }
+
+        .achieve-stat-box:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: 0 15px 35px rgba(0, 217, 255, 0.2);
+        }
+
+        .achieve-stat-box .achieve-icon {
+            font-size: 2.2rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .achieve-stat-box .achieve-num {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--primary);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .achieve-stat-box .achieve-label {
+            color: var(--text-dim);
+            font-size: 0.9rem;
+            margin-top: 0.3rem;
+        }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .achievement-card {
+            background: var(--dark-light);
+            border-radius: 20px;
+            padding: 2.5rem;
+            border: 1px solid rgba(0, 217, 255, 0.1);
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .achievement-card.gold {
+            border-color: rgba(255, 193, 60, 0.3);
+        }
+
+        .achievement-card.silver {
+            border-color: rgba(192, 192, 192, 0.3);
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0, 217, 255, 0.2);
+        }
+
+        .achievement-card.gold:hover {
+            border-color: var(--accent);
+            box-shadow: 0 20px 50px rgba(255, 193, 60, 0.25);
+        }
+
+        .achievement-card.silver:hover {
+            border-color: rgba(192, 192, 192, 0.7);
+            box-shadow: 0 20px 50px rgba(192, 192, 192, 0.2);
+        }
+
+        .achieve-card-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .achieve-medal {
+            font-size: 2.5rem;
+        }
+
+        .achieve-card-header h3 {
+            font-size: 1.3rem;
+            color: var(--text);
+            margin-bottom: 0.3rem;
+        }
+
+        .achieve-tags {
+            display: flex;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+            margin-bottom: 0.8rem;
+        }
+
+        .achieve-tag {
+            padding: 0.25rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .achieve-tag.competition {
+            background: rgba(255, 46, 99, 0.15);
+            color: var(--secondary);
+            border: 1px solid rgba(255, 46, 99, 0.3);
+        }
+
+        .achieve-tag.academic {
+            background: rgba(0, 217, 255, 0.1);
+            color: var(--primary);
+            border: 1px solid rgba(0, 217, 255, 0.3);
+        }
+
+        .achieve-tag.community {
+            background: rgba(255, 193, 60, 0.1);
+            color: var(--accent);
+            border: 1px solid rgba(255, 193, 60, 0.3);
+        }
+
+        .achieve-tag.year {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-dim);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .achievement-card p {
+            color: var(--text-dim);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        .achieve-cta {
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.08), rgba(255, 46, 99, 0.08));
+            border: 1px solid rgba(0, 217, 255, 0.15);
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+        }
+
+        .achieve-cta h3 {
+            font-size: 1.8rem;
+            color: var(--text);
+            margin-bottom: 1rem;
+        }
+
+        .achieve-cta p {
+            color: var(--text-dim);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 768px) {
+            .achieve-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .achievements-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .education-card {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .learning-stats {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
+
 <body>
     <!-- Smooth Custom Cursors -->
     <div class="cursor"></div>
@@ -937,10 +1334,12 @@
                 <div class="logo">AK</div>
                 <ul>
                     <li><a href="#home">Home</a></li>
+                    <li><a href="#education">Education</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#projects">Projects</a></li>
-                    <li><a href="#certificates">Certificates</a></li>
+                    <li><a href="#certificates">Certifications</a></li>
                     <li><a href="#experience">Experience</a></li>
+                    <li><a href="#achievements">Achievements</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
@@ -953,7 +1352,9 @@
                     <div class="hero-text">
                         <h1>AJAY KUMAR PUJARI</h1>
                         <h2>Electronics & IoT Engineer</h2>
-                        <p>Specialized in embedded systems, IoT applications, and smart device development. Passionate about creating innovative solutions that connect the physical and digital worlds through cutting-edge technology.</p>
+                        <p>Specialized in embedded systems, IoT applications, and smart device development. Passionate
+                            about creating innovative solutions that connect the physical and digital worlds through
+                            cutting-edge technology.</p>
                         <div class="hero-buttons">
                             <a href="#contact" class="btn btn-primary">Get In Touch</a>
                             <a href="#projects" class="btn btn-secondary">View Projects</a>
@@ -4855,6 +5256,29 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" alt="Ajay Kumar Pujari">
             </div>
         </section>
 
+        <!-- Education Section -->
+        <section id="education">
+            <div class="container">
+                <div class="section-header fade-up">
+                    <h2>Educational Background</h2>
+                    <p class="subtitle">Academic foundation that drives my passion for electronics and technology</p>
+                </div>
+                <div class="education-card fade-up">
+                    <div class="edu-icon-wrap">🎓</div>
+                    <div class="edu-info">
+                        <h3>B.Tech – Electronics and Communication Engineering</h3>
+                        <div class="edu-degree">Bachelor of Technology (ECE)</div>
+                        <div class="edu-college">A.M. Reddy Memorial College of Engineering and Technology</div>
+                        <div class="edu-meta">
+                            <span class="edu-badge">📅 2022 – 2026</span>
+                            <span class="edu-badge cgpa">⭐ CGPA: 7.62</span>
+                            <span class="edu-badge">📍 Andhra Pradesh</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Skills Section -->
         <section id="skills">
             <div class="container">
@@ -4924,7 +5348,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" alt="Ajay Kumar Pujari">
                             <h3>Smart Energy Monitor</h3>
                         </div>
                         <div class="project-body">
-                            <p>IoT-based real-time energy monitoring system with cloud integration and remote load control capabilities.</p>
+                            <p>IoT-based real-time energy monitoring system with cloud integration and remote load
+                                control capabilities.</p>
                             <div class="tech-list">
                                 <span class="tech-badge">ESP32</span>
                                 <span class="tech-badge">Sensors</span>
@@ -4932,9 +5357,17 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" alt="Ajay Kumar Pujari">
                                 <span class="tech-badge">Cloud</span>
                             </div>
                             <div style="display:flex;gap:0.8rem;margin-top:0.5rem;">
-                                <button class="view-project-btn" style="flex:1" onclick="event.stopPropagation();openModal('energy')">View Details</button>
-                                <a href="https://github.com/Ajaykumar-46/Smart_Energy_monitoring_system" target="_blank" onclick="event.stopPropagation()" style="flex:1;display:flex;align-items:center;justify-content:center;gap:0.4rem;padding:1rem;background:transparent;border:2px solid #6e40c9;color:#c9a0ff;font-weight:700;border-radius:10px;text-decoration:none;font-family:'JetBrains Mono',monospace;font-size:0.9rem;transition:all 0.3s;" onmouseover="this.style.background='#6e40c9';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#c9a0ff'">
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                <button class="view-project-btn" style="flex:1"
+                                    onclick="event.stopPropagation();openModal('energy')">View Details</button>
+                                <a href="https://github.com/Ajaykumar-46/Smart_Energy_monitoring_system.git"
+                                    target="_blank" onclick="event.stopPropagation()"
+                                    style="flex:1;display:flex;align-items:center;justify-content:center;gap:0.4rem;padding:1rem;background:transparent;border:2px solid #6e40c9;color:#c9a0ff;font-weight:700;border-radius:10px;text-decoration:none;font-family:'JetBrains Mono',monospace;font-size:0.9rem;transition:all 0.3s;"
+                                    onmouseover="this.style.background='#6e40c9';this.style.color='#fff'"
+                                    onmouseout="this.style.background='transparent';this.style.color='#c9a0ff'">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                                    </svg>
                                     GitHub
                                 </a>
                             </div>
@@ -4947,7 +5380,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" alt="Ajay Kumar Pujari">
                             <h3>AI Robotic Arm</h3>
                         </div>
                         <div class="project-body">
-                            <p>AI-powered robotic arm with IoT monitoring and fault detection for predictive maintenance.</p>
+                            <p>AI-powered robotic arm with IoT monitoring and fault detection for predictive
+                                maintenance.</p>
                             <div class="tech-list">
                                 <span class="tech-badge">ESP32</span>
                                 <span class="tech-badge">AI/ML</span>
@@ -4955,9 +5389,17 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" alt="Ajay Kumar Pujari">
                                 <span class="tech-badge">Servos</span>
                             </div>
                             <div style="display:flex;gap:0.8rem;margin-top:0.5rem;">
-                                <button class="view-project-btn" style="flex:1" onclick="event.stopPropagation();openModal('robotic')">View Details</button>
-                                <a href="https://github.com/Ajaykumar-46/Embedded_Robotic_Arm_Control_System" target="_blank" onclick="event.stopPropagation()" style="flex:1;display:flex;align-items:center;justify-content:center;gap:0.4rem;padding:1rem;background:transparent;border:2px solid #6e40c9;color:#c9a0ff;font-weight:700;border-radius:10px;text-decoration:none;font-family:'JetBrains Mono',monospace;font-size:0.9rem;transition:all 0.3s;" onmouseover="this.style.background='#6e40c9';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#c9a0ff'">
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                <button class="view-project-btn" style="flex:1"
+                                    onclick="event.stopPropagation();openModal('robotic')">View Details</button>
+                                <a href="https://github.com/Ajaykumar-46/Embedded_Robotic_Arm_Control_System.git"
+                                    target="_blank" onclick="event.stopPropagation()"
+                                    style="flex:1;display:flex;align-items:center;justify-content:center;gap:0.4rem;padding:1rem;background:transparent;border:2px solid #6e40c9;color:#c9a0ff;font-weight:700;border-radius:10px;text-decoration:none;font-family:'JetBrains Mono',monospace;font-size:0.9rem;transition:all 0.3s;"
+                                    onmouseover="this.style.background='#6e40c9';this.style.color='#fff'"
+                                    onmouseout="this.style.background='transparent';this.style.color='#c9a0ff'">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                                    </svg>
                                     GitHub
                                 </a>
                             </div>
@@ -4970,7 +5412,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" alt="Ajay Kumar Pujari">
                             <h3>Smart Irrigation</h3>
                         </div>
                         <div class="project-body">
-                            <p>Intelligent irrigation system with soil moisture monitoring and automated water management.</p>
+                            <p>Intelligent irrigation system with soil moisture monitoring and automated water
+                                management.</p>
                             <div class="tech-list">
                                 <span class="tech-badge">ESP32</span>
                                 <span class="tech-badge">Sensors</span>
@@ -4978,9 +5421,17 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" alt="Ajay Kumar Pujari">
                                 <span class="tech-badge">IoT</span>
                             </div>
                             <div style="display:flex;gap:0.8rem;margin-top:0.5rem;">
-                                <button class="view-project-btn" style="flex:1" onclick="event.stopPropagation();openModal('irrigation')">View Details</button>
-                                <a href="https://github.com/Ajaykumar-46/Smart_Drip_Irrigation_System" target="_blank" onclick="event.stopPropagation()" style="flex:1;display:flex;align-items:center;justify-content:center;gap:0.4rem;padding:1rem;background:transparent;border:2px solid #6e40c9;color:#c9a0ff;font-weight:700;border-radius:10px;text-decoration:none;font-family:'JetBrains Mono',monospace;font-size:0.9rem;transition:all 0.3s;" onmouseover="this.style.background='#6e40c9';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#c9a0ff'">
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                <button class="view-project-btn" style="flex:1"
+                                    onclick="event.stopPropagation();openModal('irrigation')">View Details</button>
+                                <a href="https://github.com/Ajaykumar-46/Smart_Drip_Irrigation_System.git"
+                                    target="_blank" onclick="event.stopPropagation()"
+                                    style="flex:1;display:flex;align-items:center;justify-content:center;gap:0.4rem;padding:1rem;background:transparent;border:2px solid #6e40c9;color:#c9a0ff;font-weight:700;border-radius:10px;text-decoration:none;font-family:'JetBrains Mono',monospace;font-size:0.9rem;transition:all 0.3s;"
+                                    onmouseover="this.style.background='#6e40c9';this.style.color='#fff'"
+                                    onmouseout="this.style.background='transparent';this.style.color='#c9a0ff'">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                                    </svg>
                                     GitHub
                                 </a>
                             </div>
@@ -4993,7 +5444,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" alt="Ajay Kumar Pujari">
                             <h3>Railway Gate System</h3>
                         </div>
                         <div class="project-body">
-                            <p>Automated railway crossing gate with IR train detection for enhanced safety at unmanned crossings.</p>
+                            <p>Automated railway crossing gate with IR train detection for enhanced safety at unmanned
+                                crossings.</p>
                             <div class="tech-list">
                                 <span class="tech-badge">Arduino</span>
                                 <span class="tech-badge">IR Sensor</span>
@@ -5001,9 +5453,17 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" alt="Ajay Kumar Pujari">
                                 <span class="tech-badge">LCD</span>
                             </div>
                             <div style="display:flex;gap:0.8rem;margin-top:0.5rem;">
-                                <button class="view-project-btn" style="flex:1" onclick="event.stopPropagation();openModal('railway')">View Details</button>
-                                <a href="https://github.com/Ajaykumar-46/Automatic_Railway_Gate_System" target="_blank" onclick="event.stopPropagation()" style="flex:1;display:flex;align-items:center;justify-content:center;gap:0.4rem;padding:1rem;background:transparent;border:2px solid #6e40c9;color:#c9a0ff;font-weight:700;border-radius:10px;text-decoration:none;font-family:'JetBrains Mono',monospace;font-size:0.9rem;transition:all 0.3s;" onmouseover="this.style.background='#6e40c9';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#c9a0ff'">
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                <button class="view-project-btn" style="flex:1"
+                                    onclick="event.stopPropagation();openModal('railway')">View Details</button>
+                                <a href="https://github.com/Ajaykumar-46/Automatic_Railway_Gate_System.git"
+                                    target="_blank" onclick="event.stopPropagation()"
+                                    style="flex:1;display:flex;align-items:center;justify-content:center;gap:0.4rem;padding:1rem;background:transparent;border:2px solid #6e40c9;color:#c9a0ff;font-weight:700;border-radius:10px;text-decoration:none;font-family:'JetBrains Mono',monospace;font-size:0.9rem;transition:all 0.3s;"
+                                    onmouseover="this.style.background='#6e40c9';this.style.color='#fff'"
+                                    onmouseout="this.style.background='transparent';this.style.color='#c9a0ff'">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                                    </svg>
                                     GitHub
                                 </a>
                             </div>
@@ -5016,7 +5476,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" alt="Ajay Kumar Pujari">
                             <h3>Laser Security</h3>
                         </div>
                         <div class="project-body">
-                            <p>Advanced intrusion detection using laser beam and LDR sensors for perimeter security applications.</p>
+                            <p>Advanced intrusion detection using laser beam and LDR sensors for perimeter security
+                                applications.</p>
                             <div class="tech-list">
                                 <span class="tech-badge">Arduino</span>
                                 <span class="tech-badge">Laser</span>
@@ -5024,9 +5485,17 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" alt="Ajay Kumar Pujari">
                                 <span class="tech-badge">Alarm</span>
                             </div>
                             <div style="display:flex;gap:0.8rem;margin-top:0.5rem;">
-                                <button class="view-project-btn" style="flex:1" onclick="event.stopPropagation();openModal('laser')">View Details</button>
-                                <a href="https://github.com/Ajaykumar-46/Laser_Security_System" target="_blank" onclick="event.stopPropagation()" style="flex:1;display:flex;align-items:center;justify-content:center;gap:0.4rem;padding:1rem;background:transparent;border:2px solid #6e40c9;color:#c9a0ff;font-weight:700;border-radius:10px;text-decoration:none;font-family:'JetBrains Mono',monospace;font-size:0.9rem;transition:all 0.3s;" onmouseover="this.style.background='#6e40c9';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#c9a0ff'">
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                <button class="view-project-btn" style="flex:1"
+                                    onclick="event.stopPropagation();openModal('laser')">View Details</button>
+                                <a href="https://github.com/Ajaykumar-46/Laser_Security_System.git" target="_blank"
+                                    onclick="event.stopPropagation()"
+                                    style="flex:1;display:flex;align-items:center;justify-content:center;gap:0.4rem;padding:1rem;background:transparent;border:2px solid #6e40c9;color:#c9a0ff;font-weight:700;border-radius:10px;text-decoration:none;font-family:'JetBrains Mono',monospace;font-size:0.9rem;transition:all 0.3s;"
+                                    onmouseover="this.style.background='#6e40c9';this.style.color='#fff'"
+                                    onmouseout="this.style.background='transparent';this.style.color='#c9a0ff'">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                                    </svg>
                                     GitHub
                                 </a>
                             </div>
@@ -5039,7 +5508,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" alt="Ajay Kumar Pujari">
                             <h3>Touch Sensor 555</h3>
                         </div>
                         <div class="project-body">
-                            <p>Capacitive touch circuit using IC 555 timer in monostable mode for touch-sensitive switching.</p>
+                            <p>Capacitive touch circuit using IC 555 timer in monostable mode for touch-sensitive
+                                switching.</p>
                             <div class="tech-list">
                                 <span class="tech-badge">IC 555</span>
                                 <span class="tech-badge">Capacitive</span>
@@ -5047,9 +5517,17 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" alt="Ajay Kumar Pujari">
                                 <span class="tech-badge">PCB</span>
                             </div>
                             <div style="display:flex;gap:0.8rem;margin-top:0.5rem;">
-                                <button class="view-project-btn" style="flex:1" onclick="event.stopPropagation();openModal('touch')">View Details</button>
-                                <a href="https://github.com/Ajaykumar-46/Touch_Sensor_Security_System_Using_IC-555_Timer" target="_blank" onclick="event.stopPropagation()" style="flex:1;display:flex;align-items:center;justify-content:center;gap:0.4rem;padding:1rem;background:transparent;border:2px solid #6e40c9;color:#c9a0ff;font-weight:700;border-radius:10px;text-decoration:none;font-family:'JetBrains Mono',monospace;font-size:0.9rem;transition:all 0.3s;" onmouseover="this.style.background='#6e40c9';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#c9a0ff'">
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                <button class="view-project-btn" style="flex:1"
+                                    onclick="event.stopPropagation();openModal('touch')">View Details</button>
+                                <a href="https://github.com/Ajaykumar-46/Touch_Sensor_Security_System_Using_IC-555_Timer.git"
+                                    target="_blank" onclick="event.stopPropagation()"
+                                    style="flex:1;display:flex;align-items:center;justify-content:center;gap:0.4rem;padding:1rem;background:transparent;border:2px solid #6e40c9;color:#c9a0ff;font-weight:700;border-radius:10px;text-decoration:none;font-family:'JetBrains Mono',monospace;font-size:0.9rem;transition:all 0.3s;"
+                                    onmouseover="this.style.background='#6e40c9';this.style.color='#fff'"
+                                    onmouseout="this.style.background='transparent';this.style.color='#c9a0ff'">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                                    </svg>
                                     GitHub
                                 </a>
                             </div>
@@ -5072,7 +5550,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" alt="Ajay Kumar Pujari">
                         <h3>Web Development Internship</h3>
                         <div class="cert-org">DDU GKY Institute</div>
                         <div class="cert-year">2025</div>
-                        <div style="margin-top:1rem;color:var(--primary);font-size:0.85rem;font-family:'JetBrains Mono',monospace;opacity:0.8;">Click to View Certificate →</div>
+                        <div
+                            style="margin-top:1rem;color:var(--primary);font-size:0.85rem;font-family:'JetBrains Mono',monospace;opacity:0.8;">
+                            Click to View Certificate →</div>
                     </div>
 
                     <div class="certificate-card fade-up" onclick="openCertModal('cert2')" style="cursor:pointer;">
@@ -5080,7 +5560,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" alt="Ajay Kumar Pujari">
                         <h3>AMR HACKMANIA – Hackathon Participant</h3>
                         <div class="cert-org">Certified Participant</div>
                         <div class="cert-year">2025, 2026</div>
-                        <div style="margin-top:1rem;color:var(--primary);font-size:0.85rem;font-family:'JetBrains Mono',monospace;opacity:0.8;">Click to View Certificate →</div>
+                        <div
+                            style="margin-top:1rem;color:var(--primary);font-size:0.85rem;font-family:'JetBrains Mono',monospace;opacity:0.8;">
+                            Click to View Certificate →</div>
                     </div>
 
                     <div class="certificate-card fade-up" onclick="openCertModal('cert3')" style="cursor:pointer;">
@@ -5088,7 +5570,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" alt="Ajay Kumar Pujari">
                         <h3>Embedded Systems</h3>
                         <div class="cert-org">Simplilearn SkillUp</div>
                         <div class="cert-year">2025</div>
-                        <div style="margin-top:1rem;color:var(--primary);font-size:0.85rem;font-family:'JetBrains Mono',monospace;opacity:0.8;">Click to View Certificate →</div>
+                        <div
+                            style="margin-top:1rem;color:var(--primary);font-size:0.85rem;font-family:'JetBrains Mono',monospace;opacity:0.8;">
+                            Click to View Certificate →</div>
                     </div>
 
                     <div class="certificate-card fade-up" onclick="openCertModal('cert4')" style="cursor:pointer;">
@@ -5096,7 +5580,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" alt="Ajay Kumar Pujari">
                         <h3>PCB Design</h3>
                         <div class="cert-org">Simplilearn SkillUp</div>
                         <div class="cert-year">2025</div>
-                        <div style="margin-top:1rem;color:var(--primary);font-size:0.85rem;font-family:'JetBrains Mono',monospace;opacity:0.8;">Click to View Certificate →</div>
+                        <div
+                            style="margin-top:1rem;color:var(--primary);font-size:0.85rem;font-family:'JetBrains Mono',monospace;opacity:0.8;">
+                            Click to View Certificate →</div>
                     </div>
                 </div>
             </div>
@@ -5142,35 +5628,222 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" alt="Ajay Kumar Pujari">
             </div>
         </section>
 
+        <!-- Commitments & Continuous Learning Section -->
+        <section id="learning">
+            <div class="container">
+                <div class="section-header fade-up">
+                    <h2>Commitments & Continuous Learning</h2>
+                    <p class="subtitle">Dedicated to growing every day — in skills, mindset, and impact</p>
+                </div>
+                <div class="learning-grid">
+                    <div class="learning-card fade-up">
+                        <div class="learning-icon">📚</div>
+                        <h3>Self-Driven Learning</h3>
+                        <p>Consistently upskilling through platforms like NPTEL, Coursera, and Udemy. I invest time
+                            every week into exploring new IoT frameworks, embedded systems trends, and real-world
+                            hardware challenges.</p>
+                    </div>
+                    <div class="learning-card fade-up">
+                        <div class="learning-icon">🏆</div>
+                        <h3>Hackathons & Competitions</h3>
+                        <p>Actively participating in college hackathons and project expos has sharpened my ability to
+                            build under pressure, collaborate effectively, and deliver solutions that combine hardware
+                            depth with practical relevance.</p>
+                    </div>
+                    <div class="learning-card fade-up">
+                        <div class="learning-icon">🔬</div>
+                        <h3>Project-Based Exploration</h3>
+                        <p>Every project I undertake is a learning experiment. From smart energy monitoring to AI
+                            robotic arms, I believe hands-on application with real components is the fastest path to
+                            mastery.</p>
+                    </div>
+                    <div class="learning-card fade-up">
+                        <div class="learning-icon">🤝</div>
+                        <h3>Community Engagement</h3>
+                        <p>Collaborating with peers, mentors, and fellow engineers has been integral to my growth. I
+                            actively contribute to group projects, peer reviews, and tech discussions that expand my
+                            perspective.</p>
+                    </div>
+                    <div class="learning-card fade-up">
+                        <div class="learning-icon">📜</div>
+                        <h3>Professional Certifications</h3>
+                        <p>I pursue industry-recognised certifications to validate my expertise. Earning credentials in
+                            Embedded Systems and Web Development reflects my commitment to meeting professional
+                            standards.</p>
+                    </div>
+                    <div class="learning-card fade-up">
+                        <div class="learning-icon">🎯</div>
+                        <h3>Goal-Oriented Growth</h3>
+                        <p>I set clear short-term and long-term learning milestones — whether mastering a new
+                            microcontroller, completing an IoT module, or deploying a full-stack project — and hold
+                            myself accountable to them.</p>
+                    </div>
+                </div>
+                <div class="learning-stats fade-up">
+                    <div class="learning-stat">
+                        <div class="stat-num">4+</div>
+                        <div class="stat-label">Certifications Earned</div>
+                    </div>
+                    <div class="learning-stat">
+                        <div class="stat-num">2022–2026</div>
+                        <div class="stat-label">Academic Years</div>
+                    </div>
+                    <div class="learning-stat">
+                        <div class="stat-num">2026</div>
+                        <div class="stat-label">Latest Certification</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements Section -->
+        <section id="achievements">
+            <div class="container">
+                <div class="section-header fade-up">
+                    <h2>Achievements & Recognition</h2>
+                    <p class="subtitle">Milestones and recognition that reflect my dedication to excellence in
+                        electronics and development</p>
+                </div>
+
+                <!-- Stats Row -->
+                <div class="achieve-stats fade-up">
+                    <div class="achieve-stat-box">
+                        <div class="achieve-icon">🏆</div>
+                        <div class="achieve-num">2</div>
+                        <div class="achieve-label">Competition Wins</div>
+                    </div>
+                    <div class="achieve-stat-box">
+                        <div class="achieve-icon">📅</div>
+                        <div class="achieve-num">4</div>
+                        <div class="achieve-label">Years of Study</div>
+                    </div>
+                    <div class="achieve-stat-box">
+                        <div class="achieve-icon">⭐</div>
+                        <div class="achieve-num">6+</div>
+                        <div class="achieve-label">Projects Completed</div>
+                    </div>
+                    <div class="achieve-stat-box">
+                        <div class="achieve-icon">📜</div>
+                        <div class="achieve-num">4</div>
+                        <div class="achieve-label">Certifications</div>
+                    </div>
+                </div>
+
+                <!-- Featured Achievements -->
+                <div class="section-header fade-up" style="margin-bottom:2rem;">
+                    <h3 style="font-size:1.8rem;color:var(--text);font-weight:700;">Featured Achievements</h3>
+                </div>
+                <div class="achievements-grid fade-up">
+                    <div class="achievement-card gold">
+                        <div class="achieve-card-header">
+                            <div class="achieve-medal">🥇</div>
+                            <div>
+                                <h3>1st Place – College Hackathon</h3>
+                                <div class="achieve-tags">
+                                    <span class="achieve-tag competition">Competition</span>
+                                    <span class="achieve-tag year">2025</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p>Won first place in the annual college hackathon by developing an innovative IoT-based
+                            solution that impressed judges with its technical complexity, real-world applicability, and
+                            clean hardware-software integration.</p>
+                    </div>
+                    <div class="achievement-card silver">
+                        <div class="achieve-card-header">
+                            <div class="achieve-medal">🥈</div>
+                            <div>
+                                <h3>2nd Place – Engineers Day Project Expo</h3>
+                                <div class="achieve-tags">
+                                    <span class="achieve-tag competition">Competition</span>
+                                    <span class="achieve-tag year">2024</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p>Secured second position at the Engineers Day Project Expo for presenting a comprehensive
+                            embedded systems project that demonstrated both technical excellence and real-world impact.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Additional Recognition -->
+                <div class="section-header fade-up" style="margin-bottom:2rem;">
+                    <h3 style="font-size:1.8rem;color:var(--text);font-weight:700;">Additional Recognition</h3>
+                </div>
+                <div class="achievements-grid fade-up">
+                    <div class="achievement-card">
+                        <div class="achieve-card-header">
+                            <div class="achieve-medal">⭐</div>
+                            <div>
+                                <h3>Outstanding Academic Performance</h3>
+                                <div class="achieve-tags">
+                                    <span class="achieve-tag academic">Academic</span>
+                                    <span class="achieve-tag year">2022–2026</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p>Maintained excellent academic standing throughout the B.Tech program with consistent grades
+                            in core subjects including Digital Electronics, Microprocessors, Embedded Systems, and
+                            Communication Networks.</p>
+                    </div>
+                    <div class="achievement-card">
+                        <div class="achieve-card-header">
+                            <div class="achieve-medal">🤝</div>
+                            <div>
+                                <h3>Active Community Contributor</h3>
+                                <div class="achieve-tags">
+                                    <span class="achieve-tag community">Community</span>
+                                    <span class="achieve-tag year">Ongoing</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p>Regular contributor to peer learning sessions and collaborative engineering initiatives on
+                            campus, helping fellow students with IoT concepts, circuit design, and embedded programming
+                            fundamentals.</p>
+                    </div>
+                </div>
+
+                <!-- CTA -->
+                <div class="achieve-cta fade-up">
+                    <div style="font-size:3rem;margin-bottom:1rem;">🚀</div>
+                    <h3>Ready for New Challenges</h3>
+                    <p>These achievements represent my commitment to excellence and continuous growth. I'm always eager
+                        to take on new challenges and contribute to innovative projects in electronics, IoT, and
+                        embedded systems.</p>
+                </div>
+            </div>
+        </section>
+
         <!-- Contact Section -->
+        <!-- Contact -->
         <section id="contact">
             <div class="container">
                 <div class="section-header fade-up">
                     <h2>Let's Connect</h2>
-                    <p class="subtitle">Open to opportunities in IoT and Embedded Systems</p>
+                    <p class="subtitle">Immediate joiner — open to Embeddded systems and Robotics opportunities</p>
                 </div>
                 <div class="contact-grid">
                     <div class="contact-box fade-up">
                         <div class="contact-icon">📧</div>
                         <a href="mailto:ajaykumarpujari22@gmail.com">ajaykumarpujari22@gmail.com</a>
                     </div>
-
                     <div class="contact-box fade-up">
                         <div class="contact-icon">📱</div>
-                        <a href="tel:6303401919">+91 6303401919</a>
+                        <a href="tel:+916303401919">+91 6303401919</a>
                     </div>
-
                     <div class="contact-box fade-up">
-                        <div class="contact-icon">📍</div>
-                        <span>Andhra Pradesh</span>
+                        <div class="contact-icon">💼</div>
+                        <a href="https://linkedin.com/in/pujari-ajay-kumar-a30268362" target="_blank">LinkedIn
+                            Profile</a>
                     </div>
-
                     <div class="contact-box fade-up">
-                    
-                    <div class="contact-icon">💼</div>
-                    <a href="https://github.com/ajaykumar-46" target="_blank">GitHub Profile</a>
+                        <div class="contact-icon">🐙</div>
+                        <a href="https://github.com/Ajaykumar-46" target="_blank">GitHub Profile</a>
+                    </div>
                 </div>
-            
+                <div style="text-align:center;margin-top:2rem;color:var(--text-dim);">
+                    📍 Bengaluru, Karnataka &nbsp;|&nbsp; Languages: English, Telugu, Hindi
+                </div>
             </div>
         </section>
 
@@ -5187,10 +5860,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" alt="Ajay Kumar Pujari">
         <div class="modal-content">
             <span class="close-modal" onclick="closeModal('energy')">&times;</span>
             <h2>⚡ Smart Energy Monitoring System</h2>
-            
+
             <div class="modal-section">
                 <h3>Project Overview</h3>
-                <p>An advanced IoT-based energy monitoring solution for real-time power consumption tracking and remote load control.</p>
+                <p>An advanced IoT-based energy monitoring solution for real-time power consumption tracking and remote
+                    load control.</p>
             </div>
 
             <div class="modal-section">
@@ -5220,10 +5894,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" alt="Ajay Kumar Pujari">
         <div class="modal-content">
             <span class="close-modal" onclick="closeModal('robotic')">&times;</span>
             <h2>🤖 AI-Powered Robotic Arm System</h2>
-            
+
             <div class="modal-section">
                 <h3>Project Overview</h3>
-                <p>Intelligent robotic arm with ESP32, IoT cloud monitoring, and AI-based fault detection for predictive maintenance.</p>
+                <p>Intelligent robotic arm with ESP32, IoT cloud monitoring, and AI-based fault detection for predictive
+                    maintenance.</p>
             </div>
 
             <div class="modal-section">
@@ -5253,10 +5928,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" alt="Ajay Kumar Pujari">
         <div class="modal-content">
             <span class="close-modal" onclick="closeModal('irrigation')">&times;</span>
             <h2>💧 IoT-Based Smart Irrigation System</h2>
-            
+
             <div class="modal-section">
                 <h3>Project Overview</h3>
-                <p>Intelligent irrigation management with soil moisture monitoring, leakage detection, and automated water control.</p>
+                <p>Intelligent irrigation management with soil moisture monitoring, leakage detection, and automated
+                    water control.</p>
             </div>
 
             <div class="modal-section">
@@ -5286,10 +5962,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" alt="Ajay Kumar Pujari">
         <div class="modal-content">
             <span class="close-modal" onclick="closeModal('railway')">&times;</span>
             <h2>🚂 Automatic Railway Gate System</h2>
-            
+
             <div class="modal-section">
                 <h3>Project Overview</h3>
-                <p>Automated railway crossing gate system with IR train detection for enhanced safety at unmanned crossings.</p>
+                <p>Automated railway crossing gate system with IR train detection for enhanced safety at unmanned
+                    crossings.</p>
             </div>
 
             <div class="modal-section">
@@ -5319,10 +5996,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" alt="Ajay Kumar Pujari">
         <div class="modal-content">
             <span class="close-modal" onclick="closeModal('laser')">&times;</span>
             <h2>🔒 Laser Security System</h2>
-            
+
             <div class="modal-section">
                 <h3>Project Overview</h3>
-                <p>Advanced laser-based intrusion detection creating invisible security barriers for perimeter protection.</p>
+                <p>Advanced laser-based intrusion detection creating invisible security barriers for perimeter
+                    protection.</p>
             </div>
 
             <div class="modal-section">
@@ -5352,10 +6030,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" alt="Ajay Kumar Pujari">
         <div class="modal-content">
             <span class="close-modal" onclick="closeModal('touch')">&times;</span>
             <h2>👆 Touch Sensor using IC 555 Timer</h2>
-            
+
             <div class="modal-section">
                 <h3>Project Overview</h3>
-                <p>Capacitive touch sensing circuit using IC 555 timer in monostable mode for solid-state switching applications.</p>
+                <p>Capacitive touch sensing circuit using IC 555 timer in monostable mode for solid-state switching
+                    applications.</p>
             </div>
 
             <div class="modal-section">
@@ -5387,19 +6066,33 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" alt="Ajay Kumar Pujari">
             <span class="close-modal" onclick="closeCertModal('cert1')">&times;</span>
             <div style="font-size:5rem;margin-bottom:1rem;">🎓</div>
             <h2 style="color:var(--primary);margin-bottom:0.5rem;">Certificate of Completion</h2>
-            <div style="width:80%;height:2px;background:linear-gradient(90deg,var(--primary),var(--secondary));margin:1rem auto;"></div>
+            <div
+                style="width:80%;height:2px;background:linear-gradient(90deg,var(--primary),var(--secondary));margin:1rem auto;">
+            </div>
             <h3 style="font-size:1.8rem;color:var(--text);margin-bottom:1rem;">Web Development Internship</h3>
             <p style="color:var(--text-dim);margin-bottom:0.5rem;font-size:1.1rem;">This certifies that</p>
-            <p style="color:var(--accent);font-size:1.5rem;font-weight:700;margin-bottom:0.5rem;font-family:'JetBrains Mono',monospace;">Ajay Kumar</p>
-            <p style="color:var(--text-dim);margin-bottom:1.5rem;">has successfully completed the internship program in</p>
-            <div style="background:rgba(0,217,255,0.08);border:1px solid rgba(0,217,255,0.3);border-radius:12px;padding:1.5rem;margin-bottom:1.5rem;">
+            <p
+                style="color:var(--accent);font-size:1.5rem;font-weight:700;margin-bottom:0.5rem;font-family:'JetBrains Mono',monospace;">
+                Ajay Kumar</p>
+            <p style="color:var(--text-dim);margin-bottom:1.5rem;">has successfully completed the internship program in
+            </p>
+            <div
+                style="background:rgba(0,217,255,0.08);border:1px solid rgba(0,217,255,0.3);border-radius:12px;padding:1.5rem;margin-bottom:1.5rem;">
                 <p style="color:var(--primary);font-size:1.2rem;font-weight:700;">Web Development</p>
             </div>
             <div style="display:flex;justify-content:center;gap:3rem;">
-                <div><p style="color:var(--secondary);font-weight:600;">Organization</p><p style="color:var(--text);">DDU GKY Institute</p></div>
-                <div><p style="color:var(--secondary);font-weight:600;">Year</p><p style="color:var(--text);">2025</p></div>
+                <div>
+                    <p style="color:var(--secondary);font-weight:600;">Organization</p>
+                    <p style="color:var(--text);">DDU GKY Institute</p>
+                </div>
+                <div>
+                    <p style="color:var(--secondary);font-weight:600;">Year</p>
+                    <p style="color:var(--text);">2025</p>
+                </div>
             </div>
-            <div style="margin-top:1.5rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,0.1);font-size:0.8rem;color:var(--text-dim);font-family:'JetBrains Mono',monospace;">📌 Replace this modal with your actual certificate image by adding an &lt;img&gt; tag</div>
+            <div
+                style="margin-top:1.5rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,0.1);font-size:0.8rem;color:var(--text-dim);font-family:'JetBrains Mono',monospace;">
+                📌 Replace this modal with your actual certificate image by adding an &lt;img&gt; tag</div>
         </div>
     </div>
 
@@ -5408,19 +6101,32 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" alt="Ajay Kumar Pujari">
             <span class="close-modal" onclick="closeCertModal('cert2')">&times;</span>
             <div style="font-size:5rem;margin-bottom:1rem;">🏆</div>
             <h2 style="color:var(--accent);margin-bottom:0.5rem;">Certificate of Participation</h2>
-            <div style="width:80%;height:2px;background:linear-gradient(90deg,var(--accent),var(--secondary));margin:1rem auto;"></div>
+            <div
+                style="width:80%;height:2px;background:linear-gradient(90deg,var(--accent),var(--secondary));margin:1rem auto;">
+            </div>
             <h3 style="font-size:1.8rem;color:var(--text);margin-bottom:1rem;">AMR HACKMANIA – Hackathon</h3>
             <p style="color:var(--text-dim);margin-bottom:0.5rem;font-size:1.1rem;">This certifies that</p>
-            <p style="color:var(--accent);font-size:1.5rem;font-weight:700;margin-bottom:0.5rem;font-family:'JetBrains Mono',monospace;">Ajay Kumar</p>
+            <p
+                style="color:var(--accent);font-size:1.5rem;font-weight:700;margin-bottom:0.5rem;font-family:'JetBrains Mono',monospace;">
+                Ajay Kumar</p>
             <p style="color:var(--text-dim);margin-bottom:1.5rem;">successfully participated as a competitor in</p>
-            <div style="background:rgba(255,201,60,0.08);border:1px solid rgba(255,201,60,0.3);border-radius:12px;padding:1.5rem;margin-bottom:1.5rem;">
+            <div
+                style="background:rgba(255,201,60,0.08);border:1px solid rgba(255,201,60,0.3);border-radius:12px;padding:1.5rem;margin-bottom:1.5rem;">
                 <p style="color:var(--accent);font-size:1.2rem;font-weight:700;">AMR HACKMANIA Hackathon</p>
             </div>
             <div style="display:flex;justify-content:center;gap:3rem;">
-                <div><p style="color:var(--secondary);font-weight:600;">Status</p><p style="color:var(--text);">Certified Participant</p></div>
-                <div><p style="color:var(--secondary);font-weight:600;">Year</p><p style="color:var(--text);">2025 & 2026</p></div>
+                <div>
+                    <p style="color:var(--secondary);font-weight:600;">Status</p>
+                    <p style="color:var(--text);">Certified Participant</p>
+                </div>
+                <div>
+                    <p style="color:var(--secondary);font-weight:600;">Year</p>
+                    <p style="color:var(--text);">2025 & 2026</p>
+                </div>
             </div>
-            <div style="margin-top:1.5rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,0.1);font-size:0.8rem;color:var(--text-dim);font-family:'JetBrains Mono',monospace;">📌 Replace this modal with your actual certificate image by adding an &lt;img&gt; tag</div>
+            <div
+                style="margin-top:1.5rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,0.1);font-size:0.8rem;color:var(--text-dim);font-family:'JetBrains Mono',monospace;">
+                📌 Replace this modal with your actual certificate image by adding an &lt;img&gt; tag</div>
         </div>
     </div>
 
@@ -5429,19 +6135,32 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" alt="Ajay Kumar Pujari">
             <span class="close-modal" onclick="closeCertModal('cert3')">&times;</span>
             <div style="font-size:5rem;margin-bottom:1rem;">⚡</div>
             <h2 style="color:var(--primary);margin-bottom:0.5rem;">Certificate of Completion</h2>
-            <div style="width:80%;height:2px;background:linear-gradient(90deg,var(--primary),var(--secondary));margin:1rem auto;"></div>
+            <div
+                style="width:80%;height:2px;background:linear-gradient(90deg,var(--primary),var(--secondary));margin:1rem auto;">
+            </div>
             <h3 style="font-size:1.8rem;color:var(--text);margin-bottom:1rem;">Embedded Systems</h3>
             <p style="color:var(--text-dim);margin-bottom:0.5rem;font-size:1.1rem;">This certifies that</p>
-            <p style="color:var(--accent);font-size:1.5rem;font-weight:700;margin-bottom:0.5rem;font-family:'JetBrains Mono',monospace;">Ajay Kumar</p>
+            <p
+                style="color:var(--accent);font-size:1.5rem;font-weight:700;margin-bottom:0.5rem;font-family:'JetBrains Mono',monospace;">
+                Ajay Kumar</p>
             <p style="color:var(--text-dim);margin-bottom:1.5rem;">has successfully completed the course in</p>
-            <div style="background:rgba(0,217,255,0.08);border:1px solid rgba(0,217,255,0.3);border-radius:12px;padding:1.5rem;margin-bottom:1.5rem;">
+            <div
+                style="background:rgba(0,217,255,0.08);border:1px solid rgba(0,217,255,0.3);border-radius:12px;padding:1.5rem;margin-bottom:1.5rem;">
                 <p style="color:var(--primary);font-size:1.2rem;font-weight:700;">Embedded Systems Programming</p>
             </div>
             <div style="display:flex;justify-content:center;gap:3rem;">
-                <div><p style="color:var(--secondary);font-weight:600;">Platform</p><p style="color:var(--text);">Simplilearn SkillUp</p></div>
-                <div><p style="color:var(--secondary);font-weight:600;">Year</p><p style="color:var(--text);">2025</p></div>
+                <div>
+                    <p style="color:var(--secondary);font-weight:600;">Platform</p>
+                    <p style="color:var(--text);">Simplilearn SkillUp</p>
+                </div>
+                <div>
+                    <p style="color:var(--secondary);font-weight:600;">Year</p>
+                    <p style="color:var(--text);">2025</p>
+                </div>
             </div>
-            <div style="margin-top:1.5rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,0.1);font-size:0.8rem;color:var(--text-dim);font-family:'JetBrains Mono',monospace;">📌 Replace this modal with your actual certificate image by adding an &lt;img&gt; tag</div>
+            <div
+                style="margin-top:1.5rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,0.1);font-size:0.8rem;color:var(--text-dim);font-family:'JetBrains Mono',monospace;">
+                📌 Replace this modal with your actual certificate image by adding an &lt;img&gt; tag</div>
         </div>
     </div>
 
@@ -5450,23 +6169,37 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" alt="Ajay Kumar Pujari">
             <span class="close-modal" onclick="closeCertModal('cert4')">&times;</span>
             <div style="font-size:5rem;margin-bottom:1rem;">🔌</div>
             <h2 style="color:var(--primary);margin-bottom:0.5rem;">Certificate of Completion</h2>
-            <div style="width:80%;height:2px;background:linear-gradient(90deg,var(--primary),var(--secondary));margin:1rem auto;"></div>
+            <div
+                style="width:80%;height:2px;background:linear-gradient(90deg,var(--primary),var(--secondary));margin:1rem auto;">
+            </div>
             <h3 style="font-size:1.8rem;color:var(--text);margin-bottom:1rem;">PCB Design</h3>
             <p style="color:var(--text-dim);margin-bottom:0.5rem;font-size:1.1rem;">This certifies that</p>
-            <p style="color:var(--accent);font-size:1.5rem;font-weight:700;margin-bottom:0.5rem;font-family:'JetBrains Mono',monospace;">Ajay Kumar</p>
+            <p
+                style="color:var(--accent);font-size:1.5rem;font-weight:700;margin-bottom:0.5rem;font-family:'JetBrains Mono',monospace;">
+                Ajay Kumar</p>
             <p style="color:var(--text-dim);margin-bottom:1.5rem;">has successfully completed the course in</p>
-            <div style="background:rgba(0,217,255,0.08);border:1px solid rgba(0,217,255,0.3);border-radius:12px;padding:1.5rem;margin-bottom:1.5rem;">
+            <div
+                style="background:rgba(0,217,255,0.08);border:1px solid rgba(0,217,255,0.3);border-radius:12px;padding:1.5rem;margin-bottom:1.5rem;">
                 <p style="color:var(--primary);font-size:1.2rem;font-weight:700;">PCB Design & Layout</p>
             </div>
             <div style="display:flex;justify-content:center;gap:3rem;">
-                <div><p style="color:var(--secondary);font-weight:600;">Platform</p><p style="color:var(--text);">Simplilearn SkillUp</p></div>
-                <div><p style="color:var(--secondary);font-weight:600;">Year</p><p style="color:var(--text);">2025</p></div>
+                <div>
+                    <p style="color:var(--secondary);font-weight:600;">Platform</p>
+                    <p style="color:var(--text);">Simplilearn SkillUp</p>
+                </div>
+                <div>
+                    <p style="color:var(--secondary);font-weight:600;">Year</p>
+                    <p style="color:var(--text);">2025</p>
+                </div>
             </div>
-            <div style="margin-top:1.5rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,0.1);font-size:0.8rem;color:var(--text-dim);font-family:'JetBrains Mono',monospace;">📌 Replace this modal with your actual certificate image by adding an &lt;img&gt; tag</div>
+            <div
+                style="margin-top:1.5rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,0.1);font-size:0.8rem;color:var(--text-dim);font-family:'JetBrains Mono',monospace;">
+                📌 Replace this modal with your actual certificate image by adding an &lt;img&gt; tag</div>
         </div>
     </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script>
         // Smooth Custom Cursor with Interpolation
         let mouseX = 0, mouseY = 0;
         let cursorX = 0, cursorY = 0;
@@ -5486,16 +6219,16 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" alt="Ajay Kumar Pujari">
             // Faster lerp for cursor, slower for follower = natural trailing effect
             cursorX += (mouseX - cursorX) * 0.5;
             cursorY += (mouseY - cursorY) * 0.5;
-            
+
             followerX += (mouseX - followerX) * 0.15;
             followerY += (mouseY - followerY) * 0.15;
-            
+
             cursor.style.left = Math.round(cursorX) + 'px';
             cursor.style.top = Math.round(cursorY) + 'px';
-            
+
             follower.style.left = Math.round(followerX) + 'px';
             follower.style.top = Math.round(followerY) + 'px';
-            
+
             requestAnimationFrame(animateCursor);
         }
 
@@ -5516,15 +6249,15 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" alt="Ajay Kumar Pujari">
         // Create Electronics Background Animation
         function createElectronicsBackground() {
             const canvas = document.getElementById('electronicsCanvas');
-            
+
             // Electronics symbols
             const components = [
-                '⚡', '🔌', '💡', '🔋', '📡', '🎛️', 
+                '⚡', '🔌', '💡', '🔋', '📡', '🎛️',
                 '⚙️', '🔧', '📟', '🖥️', '💾', '🔩'
             ];
-            
+
             const colors = ['#00D9FF', '#FF2E63', '#FFC93C'];
-            
+
             // Create floating components
             for (let i = 0; i < 25; i++) {
                 const component = document.createElement('div');
@@ -5537,12 +6270,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" alt="Ajay Kumar Pujari">
                 component.style.animationDuration = (Math.random() * 15 + 15) + 's';
                 canvas.appendChild(component);
             }
-            
+
             // Create circuit lines
             for (let i = 0; i < 15; i++) {
                 const line = document.createElement('div');
                 line.className = 'circuit-line';
-                
+
                 const isHorizontal = Math.random() > 0.5;
                 if (isHorizontal) {
                     line.style.width = (Math.random() * 200 + 100) + 'px';
@@ -5555,7 +6288,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" alt="Ajay Kumar Pujari">
                     line.style.left = Math.random() * 100 + '%';
                     line.style.top = Math.random() * 100 + '%';
                 }
-                
+
                 line.style.animationDelay = Math.random() * 3 + 's';
                 canvas.appendChild(line);
             }
@@ -5585,7 +6318,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" alt="Ajay Kumar Pujari">
             document.body.style.overflow = 'auto';
         }
 
-        window.onclick = function(event) {
+        window.onclick = function (event) {
             if (event.target.classList.contains('modal')) {
                 event.target.classList.remove('active');
                 document.body.style.overflow = 'auto';
@@ -5634,7 +6367,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" alt="Ajay Kumar Pujari">
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', (e) => {
                 e.preventDefault();
-                              const target = document.querySelector(anchor.getAttribute('href'));
+                const target = document.querySelector(anchor.getAttribute('href'));
                 if (target) {
                     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
@@ -5642,4 +6375,5 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" alt="Ajay Kumar Pujari">
         });
     </script>
 </body>
+
 </html>
